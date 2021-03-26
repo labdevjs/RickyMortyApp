@@ -9,6 +9,7 @@ import { CharactersService} from '../../services/characters.service';
 })
 export class CharactersPage implements OnInit {
 
+  Character: any = [];
   constructor(
     private routeActive: ActivatedRoute,
     private charService: CharactersService
@@ -19,6 +20,7 @@ export class CharactersPage implements OnInit {
     console.log(id);
     this.charService.getCharacter(id).subscribe( char =>{
       console.log(char);
+      this.Character = char;
     })
   }
 
